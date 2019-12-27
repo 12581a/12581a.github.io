@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/12 | Hexo</title>
+  <title>SQL语句 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
+  <meta name="description" content="SQL语句 基本查询  SELECT column_name,column_name FROM table_name; SELECT * FROM table_name; SELECT DISTINCT column_name FROM table_name;  DISTINCT 关键词用于返回唯一不同的值。  SELECT * FROM table_name WHERE column_name">
+<meta name="keywords" content="SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL语句">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;27&#x2F;SQL%E8%AF%AD%E5%8F%A5&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="SQL语句 基本查询  SELECT column_name,column_name FROM table_name; SELECT * FROM table_name; SELECT DISTINCT column_name FROM table_name;  DISTINCT 关键词用于返回唯一不同的值。  SELECT * FROM table_name WHERE column_name">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-27T06:39:30.797Z">
 <meta name="twitter:card" content="summary">
   
   
@@ -129,37 +133,140 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-SQL语句" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/27/SQL%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
-  	<time datetime="2019-12-27T06:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/27/SQL%E8%AF%AD%E5%8F%A5/">SQL语句</a>
+    <h1 class="article-title" itemprop="name">
+      SQL语句
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/27/SQL%E8%AF%AD%E5%8F%A5/" class="archive-article-date">
+  	<time datetime="2019-12-27T06:31:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-27</time>
+</a>
+
+        <!-- ������ͳ�� -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> �Ķ�����<span id="busuanzi_value_page_pv"></span>��
+        </span>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><strong>基本查询</strong></li>
+</ul>
+<p>SELECT column_name,column_name FROM table_name;</p>
+<p>SELECT * FROM table_name;</p>
+<p>SELECT DISTINCT column_name FROM table_name;</p>
+<blockquote>
+<p>DISTINCT 关键词用于返回唯一不同的值。</p>
+</blockquote>
+<p>SELECT * FROM table_name WHERE column_name =value;</p>
+<blockquote>
+<p>WHERE 子句用于提取那些满足指定条件的记录。</p>
+</blockquote>
+<p>SELECT * FROM table_name WHERE country=’USA’ OR id=1</p>
+<blockquote>
+<p>如果第一个条件和第二个条件都成立，则 AND 运算符显示一条记录。</p>
+<p>如果第一个条件和第二个条件中只要有一个成立，则 OR 运算符显示一条记录。</p>
+</blockquote>
+<p>SELECT column_name FROM table_name ORDER BY column_name DESC;</p>
+<blockquote>
+<p>ORDER BY 关键字默认按照升序对记录进行排序。如果需要按照降序对记录进行排序，您可以使用 DESC 关键字。</p>
+</blockquote>
+<ul>
+<li><strong>插入</strong></li>
+</ul>
+<p>INSERT INTO table_name VALUES (value1,value2,value3,…);</p>
+<p>INSERT INTO table_name (column1,column2,column3,…) VALUES (value1,value2,value3,…);</p>
+<blockquote>
+<p>插入的第二种形式需要指定列名及被插入的值：</p>
+</blockquote>
+<ul>
+<li><strong>更新</strong></li>
+</ul>
+<p>UPDATE table_name SET column1=value1,column2=value2 WHERE some_column=some_value;</p>
+<ul>
+<li><strong>删除</strong></li>
+</ul>
+<p>DELETE FROM table_name WHERE some_column=some_value;</p>
+<h4 id="高级语句"><a href="#高级语句" class="headerlink" title="高级语句"></a>高级语句</h4><p> SELECT * FROM table_name <strong>LIMIT</strong> 2,3; </p>
+<blockquote>
+<p>LIMIT 语句来选取指定的条数数据，2,3表示从第二行开始往后取3条数据</p>
+</blockquote>
+<p>SELECT * FROM table_name WHERE name <strong>LIKE</strong> ‘G%’;</p>
+<blockquote>
+<p>上面的SQL语句选取 name 以字母 “G” 开始的所有客户：</p>
+</blockquote>
+<p>select * from table_city where Address <strong>not like</strong> ‘%市’</p>
+<blockquote>
+<p>上面的SQL语句选取不以“市”结尾的城市</p>
+</blockquote>
+<p><strong><em>SQL简单通配符</em></strong></p>
+<table>
+<thead>
+<tr>
+<th>通配符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%</td>
+<td>替代 0 个或多个字符</td>
+</tr>
+<tr>
+<td>_</td>
+<td>替代一个字符</td>
+</tr>
+</tbody></table>
+<p>SELECT * FROM table_city WHERE name <strong>IN</strong> (‘北京市’,’天津市’);</p>
+<blockquote>
+<p> IN 操作符允许您在 WHERE 子句中规定多个值。 </p>
+</blockquote>
+<p>SELECT * FROM table_person WHERE age <strong>BETWEEN</strong> 18 <strong>AND</strong> 30;</p>
+<blockquote>
+<p> 上面的SQL语句选取年龄介于 1 到 20 之间的人的数据</p>
+</blockquote>
+<p>SELECT column_name(s) FROM table1 <strong>INNER JOIN</strong> table2 <strong>ON</strong> table1.column_name=table2.column_name</p>
+<p>SELECT column_name(s) FROM table1 <strong>LEFT JOIN</strong> table2 <strong>ON</strong> table1.column_name=table2.column_name</p>
+<blockquote>
+<p> LEFT JOIN 关键字从左表（table1）返回所有的行，即使右表（table2）中没有匹配。如果右表中没有匹配，则结果为 NULL。 </p>
+</blockquote>
+<p>SELECT column_name(s) FROM table1 <strong>RIGHT JOIN</strong> table2 <strong>ON</strong> table1.column_name=table2.column_name</p>
+<blockquote>
+<p> RIGHT JOIN 关键字从右表（table2）返回所有的行，即使左表（table1）中没有匹配。如果左表中没有匹配，则结果为 NULL。 </p>
+</blockquote>
+<p>SELECT column_name(s) FROM table1<br><strong>UNION</strong><br>SELECT column_name(s) FROM table2;</p>
+<blockquote>
+<p>UNION 操作符用于合并两个或多个 SELECT 语句的结果集。</p>
+<p>请注意，UNION 内部的每个 SELECT 语句必须拥有相同数量的列。列也必须拥有相似的数据类型。同时，每个 SELECT 语句中的列的顺序必须相同。</p>
+</blockquote>
+<p>SELECT column_name, aggregate_function(column_name)<br>FROM table_name<br>WHERE column_name operator value<br><strong>GROUP BY</strong> column_name;</p>
+<blockquote>
+<p>GROUP BY 语句用于结合聚合函数，根据一个或多个列对结果集进行分组。</p>
+</blockquote>
+<p>SELECT column_name, aggregate_function(column_name)<br>FROM table_name<br>WHERE column_name operator value<br>GROUP BY column_name<br><strong>HAVING</strong> aggregate_function(column_name) operator value; </p>
+<blockquote>
+<p>在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与聚合函数一起使用。</p>
+<p>HAVING 子句可以让我们筛选分组后的各组数据。</p>
+</blockquote>
+<h4 id="SQL函数"><a href="#SQL函数" class="headerlink" title="SQL函数"></a>SQL函数</h4><p>SELECT <strong>AVG</strong>(column_name) FROM table_name</p>
+<p>SELECT <strong>COUNT</strong>(*) FROM table_name</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -171,58 +278,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/27/SQL%E8%AF%AD%E5%8F%A5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/19/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" class="archive-article-date">
-  	<time datetime="2019-12-19T02:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/19/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速排序</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/19/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">快速排序</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -250,8 +405,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
