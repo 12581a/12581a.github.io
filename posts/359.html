@@ -1,0 +1,1375 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Spring概述, Zero">
+    <meta name="description" content="Hello,World!">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Spring概述 | Zero</title>
+    <link rel="icon" type="image/png" href="/logo.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+</head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Zero</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Zero</div>
+        <div class="logo-desc">
+            
+            Hello,World!
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Spring概述</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    .toc-fixed .toc-link::before{
+        position: fixed!important;/*当toc的位置改为fixed时，.toc-link::before也要改为fixed*/
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Spring/">
+                                <span class="chip bg-color">Spring</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-04
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Spring概述"><a href="#Spring概述" class="headerlink" title="Spring概述"></a>Spring概述</h1><h2 id="一、spring的IOC"><a href="#一、spring的IOC" class="headerlink" title="一、spring的IOC"></a>一、spring的IOC</h2><h3 id="1-springIOC原理"><a href="#1-springIOC原理" class="headerlink" title="1.springIOC原理"></a>1.springIOC原理</h3><pre><code class="java">&lt;bean id=&quot;helloWorld&quot; class=&quot;com.ioc.HelloWorld&quot;&gt;
+       &lt;property name=&quot;message&quot; value=&quot;Hello World!&quot;/&gt;
+&lt;/bean&gt;</code></pre>
+<p>首先加载并解析上面的配置文件，获取标签中的id和class属性，根据class属性利用反射来创建类对象和设置类属性，最后将Bean注入到Bean容器中。</p>
+<p><strong>什么是POJO，JavaBean？</strong></p>
+<p>POJO：<br> 一个简单的Java类，这个类没有实现/继承任何特殊的java接口或者类，不遵循任何主要java模型，约定或者框架的java对象，在理想情况下，POJO不应该有注解。<br> JavaBean：</p>
+<ul>
+<li>JavaBean是可序列化的，实现了serializable接口</li>
+<li>具有一个无参构造器</li>
+<li>有按照命名规范的set和gett，is（可以用于访问布尔类型的属性）方法</li>
+</ul>
+<p><strong>ApplicationContext容器</strong></p>
+<pre><code class="java">public interface ApplicationContext extends EnvironmentCapable, ListableBeanFactory,     HierarchicalBeanFactory,MessageSource, ApplicationEventPublisher,
+ResourcePatternResolver {</code></pre>
+<p>ApplicationContext是一个接口，最常被使用的 ApplicationContext 接口实现： </p>
+<ul>
+<li><strong>FileSystemXmlApplicationContext</strong>：该容器从 XML 文件中加载已被定义的 bean。在这里，你需要提供给构造器 XML 文件的完整路径 </li>
+</ul>
+<ul>
+<li><strong>ClassPathXmlApplicationContext</strong>：该容器从 XML 文件中加载已被定义的 bean。在这里，你不需要提供 XML 文件的完整路径，只需正确配置 CLASSPATH 环境变量即可，因为，容器会从 CLASSPATH 中搜索 bean 配置文件。</li>
+<li><strong>WebXmlApplicationContext</strong>：该容器会在一个 web 应用程序的范围内加载在 XML 文件中已被定义的 bean。</li>
+</ul>
+<h3 id="2-springBean的生命周期"><a href="#2-springBean的生命周期" class="headerlink" title="2.springBean的生命周期"></a>2.springBean的生命周期</h3><ul>
+<li>Bean容器找到配置文件中 Spring Bean 的定义。</li>
+<li>Bean容器利用Java Reflection API创建一个Bean的实例。</li>
+<li>如果涉及到一些属性值,利用set方法设置一些属性值。</li>
+<li>如果Bean实现了BeanNameAware接口，调用setBeanName()方法，传入Bean的名字。</li>
+<li>如果Bean实现了BeanClassLoaderAware接口，调用setBeanClassLoader()方法，传入ClassLoader对象的实例。</li>
+<li>如果Bean实现了BeanFactoryAware接口，调用setBeanClassLoader()方法，传入ClassLoader对象的实例。</li>
+<li>与上面的类似，如果实现了其他*Aware接口，就调用相应的方法。</li>
+<li>如果有和加载这个Bean的Spring容器相关的BeanPostProcessor对象，执行postProcessBeforeInitialization()方法</li>
+<li>如果Bean实现了InitializingBean接口，执行afterPropertiesSet()方法。</li>
+<li>如果Bean在配置文件中的定义包含init-method属性，执行指定的方法。</li>
+<li>如果有和加载这个Bean的Spring容器相关的BeanPostProcessor对象，执行postProcessAfterInitialization()方法</li>
+<li>当要销毁Bean的时候，如果Bean实现了DisposableBean接口，执行destroy()方法。</li>
+<li>当要销毁Bean的时候，如果Bean在配置文件中的定义包含destroy-method属性，执行指定的方法。</li>
+</ul>
+<p><strong>基于注解的配置</strong></p>
+<ul>
+<li><strong>@Required</strong> 注释应用于 bean 属性的 setter 方法，它表明受影响的 bean 属性在配置时必须放在 XML 配置文件中，否则容器就会抛出一个 BeanInitializationException 异常。 </li>
+<li><strong>@Autowired</strong> 注释可以在 setter 方法中被用于自动连接 bean，在属性上面使用来除去setter方法</li>
+<li><strong>@Resource</strong> ,如 @Resource(name=”userDao”) 在 private UserDao userdao上面</li>
+<li><strong>@Controller</strong>对应表现层的Bean</li>
+<li><strong>@Service</strong>对应的是业务层Bean ，如@Service(“user”)相当于<code>&lt;id=&quot;user&quot; class=&quot;...&quot;&gt;</code></li>
+<li><strong>@Scope</strong>,如在类上加@Scope(value=”prototype”)注解表示多实例。 </li>
+<li><strong>@Repository</strong>对应数据访问层Bean  </li>
+</ul>
+<h3 id="3-bean的作用域"><a href="#3-bean的作用域" class="headerlink" title="3.bean的作用域"></a>3.bean的作用域</h3><p>在 Spring 中，那些组成应用程序的主体及由 Spring IOC 容器所管理的对象，被称之为 bean。简单地讲，bean 就是由 IOC 容器初始化、装配及管理的对象，除此之外，bean 就与应用程序中的其他对象没有什么区别了。而 bean 的定义以及 bean 相互间的依赖关系将通过配置元数据来描述。 </p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>singleton</td>
+<td>单例，是默认值。可以指定Bean节点的 <code>lazy-init=”true”</code> 来延迟初始化bean，这时候，只有在第一次获取bean时才会初始化bean，即第一次请求该bean时才初始化。</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>定义对应多个对象实例。 prototype 作用域的 bean 会导致在每次对该 bean 请求时都会创建一个新的 bean 实例。</td>
+</tr>
+<tr>
+<td>request</td>
+<td>每一次HTTP请求都会产生一个新的 bean，bean仅在当前HTTP request内有效。request只适用于Web程序，每一次 HTTP 请求都会产生一个新的bean，同时该bean仅在当前HTTP request内有效，当请求结束后，该对象的生命周期即告结束。</td>
+</tr>
+<tr>
+<td>session</td>
+<td>每一次HTTP请求都会产生一个新的 bean，该bean仅在当前 HTTP session 内有效。session只适用于Web程序，session 作用域表示该针对每一次 HTTP 请求都会产生一个新的 bean，同时该 bean 仅在当前 HTTP session 内有效。</td>
+</tr>
+<tr>
+<td>globalSession</td>
+<td>在一个全局的HTTP Session中，一个bean定义对应一个实例。典型情况下，仅在使用portlet context的时候有效。该作用域仅在基于 web的Spring ApplicationContext情形下有效。</td>
+</tr>
+</tbody></table>
+<h2 id="二、spring的AOP"><a href="#二、spring的AOP" class="headerlink" title="二、spring的AOP"></a>二、spring的AOP</h2><h3 id="1-原理概述"><a href="#1-原理概述" class="headerlink" title="1.原理概述"></a>1.原理概述</h3><p>动态代理的两类实现：Jdk动态代理与基于继承的代理，两类代理的实现：Jdk代理与Cglib代理。Jdk动态代理只能 基于接口进行动态代理。Cdlib基于继承实现来实现代理，无法对static、final类进行代理,无法对private、static方法进行代理。</p>
+<pre><code class="java">public class JdkProxy implements InvocationHandler {
+    private BookImpl bookImpl;
+
+    public JdkProxy(BookImpl bookImpl) {
+        this.bookImpl = bookImpl;
+    }
+
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println(&quot;proxy......&quot;);
+        Object book = null;
+        book = (BookImpl) method.invoke(bookImpl,args);
+        return book;
+    }
+}
+public class TestAop {
+    public static void main(String[] args) {
+        Book book = (Book) Proxy.newProxyInstance(TestAop.class.getClassLoader(),
+                new Class[]{Book.class},new JdkProxy(new BookImpl()));
+        book.add();
+    }
+//proxy......
+//add......    </code></pre>
+<pre><code class="java">public class DemoMethodInterceptor implements MethodInterceptor {
+    public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
+        System.out.println(&quot;beforeCglib......&quot;);
+        Object book = null;
+        book = methodProxy.invokeSuper(o,objects);
+        System.out.println(&quot;beforeCglib......&quot;);
+        return book;
+    }
+}
+public class TestAop {
+    public static void main(String[] args) {
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(BookImpl.class);
+        enhancer.setCallback(new DemoMethodInterceptor());
+        Book book = (Book) enhancer.create();
+        book.add();
+    }
+//beforeCglib......
+//add......
+//beforeCglib......</code></pre>
+<pre><code class="java">&lt;!--配置aop的操作--&gt;
+    &lt;aop:config&gt;
+        &lt;!--配置切入点 --&gt;
+        &lt;aop:pointcut expression=&quot;execution(* cn.itcast.aspectj.Book.*(..))&quot; id=&quot;pointcut1&quot;/&gt;
+        &lt;!--配置切面--&gt;
+        &lt;aop:aspect ref=&quot;myBook&quot;&gt;
+            &lt;!--配置增强的类型--&gt;
+            &lt;aop:before method=&quot;before&quot; pointcut-ref=&quot;pointcut1&quot;/&gt;
+        &lt;/aop:aspect&gt;
+    &lt;/aop:config&gt;</code></pre>
+<h3 id="2-表达式"><a href="#2-表达式" class="headerlink" title="2.表达式"></a>2.表达式</h3><p><strong>1.within表达式</strong></p>
+<pre><code class="java">@Aspect
+@Component
+public class YourBook {
+    @Pointcut(&quot;within(com.spring.aop.Book)&quot;)
+    public void matchType(){}
+
+    @Before(&quot;matchType()&quot;)
+    public void before(){
+        System.out.println(&quot;yourbefore......&quot;);
+    }
+}</code></pre>
+<p><strong>2.对象表达式</strong></p>
+<pre><code class="java">@Aspect
+@Component
+public class YourBook {
+    //Book是一个接口，会拦截所有实现了这个接口的类
+    @Pointcut(&quot;this(com.spring.aop.Book)&quot;)
+    public void matchType(){}
+    ......
+}
+//@Pointcut(&quot;target(com.spring.aop.Book)&quot;)
+//@Pointcut(&quot;Bean(BookImpl)&quot;)</code></pre>
+<p><strong>3.execution表达式，execution(&lt;访问修饰符&gt;&lt;返回类型&gt;&lt;方法名(&lt;参数&gt;)&lt;异常&gt;)</strong></p>
+<pre><code class="java">@Aspect
+@Component
+public class YourBook {
+    @Pointcut(&quot;execution(* cn.itcast.aspectj.Book.*(..))&quot;)
+    public void matchType(){}
+    ......
+}
+//@Before(value=&quot;execution(* cn.itcast.aspectj.Book.*(..))&quot;)</code></pre>
+<h2 id="三、springMVC"><a href="#三、springMVC" class="headerlink" title="三、springMVC"></a>三、springMVC</h2><h3 id="1-架构原理分析"><a href="#1-架构原理分析" class="headerlink" title="1.架构原理分析"></a>1.架构原理分析</h3><ul>
+<li><p>发起请求到前端控制器（DispatcherServlet）</p>
+</li>
+<li><p>前端控制器请求HandlerMapping查找Handler，可以根据xml配置、注解方式查找</p>
+</li>
+<li><p>处理器映射器HandlerMapping向前端控制器返回Handler</p>
+</li>
+<li><p>前端控制器调用处理器适配器去执行Handler,Handler执行完成给适配器返回ModeAndView</p>
+</li>
+<li><p>处理器适配器向前端控制器返回ModeAndView。ModeAndView是springMVC框架对象的一个底层的对象，包括Model和view。</p>
+</li>
+<li><p>前端控制器请求视图解析器去进行视图的解析，根据逻辑视图解析成真正的视图    （jsp）</p>
+</li>
+<li><p>视图解析器向前端控制器返回view,前端控制器进行视图的渲染。视图渲染将模型数据（在ModelAndView对象中）填充到request域中。</p>
+</li>
+</ul>
+<h3 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h3><pre><code class="properties">&lt;!--在web.xml中配置前端控制器--&gt;
+&lt;servlet&gt;  
+        &lt;servlet-name&gt;springmvctest&lt;/servlet-name&gt;  
+        &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;  
+           &lt;init-param&gt;  
+            &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;  
+            &lt;param-value&gt;classpath:springmvc.xml&lt;/param-value&gt;  
+            &lt;/init-param&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;  
+&lt;/servlet&gt;  
+    &lt;servlet-mapping&gt;  
+        &lt;servlet-name&gt;springmvctest&lt;/servlet-name&gt;  
+        &lt;url-pattern&gt;/&lt;/url-pattern&gt;  
+    &lt;/servlet-mapping&gt;  </code></pre>
+<pre><code class="properties">&lt;!--视图解析器--&gt;
+&lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
+             &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;
+             &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
+&lt;/bean&gt;
+&lt;mvc:annotation-driven&gt;&lt;/mvc:annotation-driven&gt;</code></pre>
+<h3 id="3-SpringMVC常见注解"><a href="#3-SpringMVC常见注解" class="headerlink" title="3.SpringMVC常见注解"></a>3.SpringMVC常见注解</h3><ul>
+<li><strong>@RequestMapping</strong></li>
+</ul>
+<p>是一个用来处理请求地址映射的注解,适用于类、方法。用于类上，表示类中的所有响应请求的方法都是以该地址作为父路径。</p>
+<ul>
+<li><strong>@PathVariable</strong></li>
+</ul>
+<p>用于将请求URL中的模板变量映射到功能处理方法的参数上，即取出uri模板中的变量作为参数 </p>
+<pre><code class="java">@RequestMapping(&quot;/delete/{id}&quot;)
+public String deleteTest(@PathVariable(value=&quot;id&quot;) Integer id){}</code></pre>
+<ul>
+<li><strong>@RequestParam</strong></li>
+</ul>
+<p>用于将请求参数区数据映射到功能处理方法的参数上 </p>
+<p> value/name: 两个属性都指代参数名字，即入参的请求参数名字(通常表单name属性)<br> required: 是否必须，默认是true，表示请求中一定要有相应的参数，否则将抛出异常<br> defaultValue: 默认值，表示如果请求中没有同名参数时的默认值，设置该参数时，自动将required设为false</p>
+<pre><code class="java">@RequestMapping(&quot;/test&quot;)
+public String deleteTest(@RequestParam(value=&quot;username&quot;) String user,@RequestParam(value=&quot;password&quot;,required=false,defaultValue=&quot;0&quot;) Integer passWord){}</code></pre>
+<ul>
+<li><p><strong>@CookieValue</strong></p>
+<p>可以把Request header中关于cookie的值绑定到方法的参数上 </p>
+</li>
+</ul>
+<pre><code class="java">public String index(@CookieValue(&quot;JSESSIONID&quot;) String cookie){}</code></pre>
+<ul>
+<li><strong>@SessionAttributes</strong></li>
+</ul>
+<p>只能作用在类上，作用是将指定的Model中的键值对添加至session中，方便在下一次请求中使用。 </p>
+<pre><code class="java">@Controller
+@RequestMapping(&quot;/testSessionAttribute&quot;)
+@SessionAttributes(value = {&quot;user&quot;},types={String.class})
+public class TestSessionAttributeController {
+    @RequestMapping(&quot;/testHandler&quot;)
+    public String testHandler(Model model, String age, String name){
+       User user = new User(age,name);
+       model.addAttribute(&quot;user&quot;,user); 
+       model.addAttribute(&quot;age&quot;,age);
+       return &quot;result&quot;;
+    }
+}</code></pre>
+<p><strong>@modelAttribute</strong></p>
+<p>应用在方法上: 被<code>@ModelAttribute</code>注解的方法会在<code>Controller</code>每个方法执行之前都执行，因此对于一个<code>Controller</code>中包含多个URL的时候，要谨慎使用。 </p>
+<h2 id="四、SpringBoot"><a href="#四、SpringBoot" class="headerlink" title="四、SpringBoot"></a>四、SpringBoot</h2><h3 id="1-Springboot的优点"><a href="#1-Springboot的优点" class="headerlink" title="1.Springboot的优点"></a>1.Springboot的优点</h3><p>Spring Boot遵循“固执己见的默认配置”，以减少开发工作（默认配置可以修改）。 Spring Boot 项目所需的开发或工程时间明显减少，通常会提高整体生产力。 </p>
+<h3 id="2-SpringBoot配置"><a href="#2-SpringBoot配置" class="headerlink" title="2.SpringBoot配置"></a>2.SpringBoot配置</h3><p>通过<code>@Value</code>来读取配置信息，还可以通过<code>@ConfigurationProperties</code>读取并与 bean 绑定。它们之间的比较：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>@ConfigurationProperties</th>
+<th>@value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能</td>
+<td>批量注入配置文件中的属性</td>
+<td>一个个指定</td>
+</tr>
+<tr>
+<td>松散绑定（松散语法）</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>SpEL</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>JSR303数据校验</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+<tr>
+<td>复杂类型封装</td>
+<td>支持</td>
+<td>不支持</td>
+</tr>
+</tbody></table>
+<p>使用原则：在某个业务逻辑中需要获取一下配置文件中的某项值，使用@Value；如果专门编写了一个javaBean来和配置文件进行映射，我们就直接使用@ConfigurationProperties； </p>
+<pre><code class="java">/*
+* 配置文件中的属性与类对应的属性绑定,默认从全局配置文件中获取值
+*/
+@Component
+@ConfigurationProperties(prefix = &quot;person&quot;)
+public class Person {
+    //@Value(&quot;${person.username}&quot;)
+    private String username;
+    private Integer password;
+
+//yml配置文件
+person:
+    username: zhangsan
+    password: 123456</code></pre>
+<pre><code class="xml">//pom文件配置可以有提示
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-configuration-processor&lt;/artifactId&gt;
+    &lt;optional&gt;true&lt;/optional&gt;
+&lt;/dependency&gt;</code></pre>
+<pre><code>yml语法：
+k:v：字面直接写
+    字符串默认不加上单引号或双引号；
+    &quot;&quot;:双引号，不会转义字符串里的特殊字符；&#39;&#39;:会转义特殊字符，特殊字符最终只是一个普通的字符串数据
+对象属性直接写，还有一种行内写法，user: {name: zhangsan,age: 13}
+数组、list的写法：行内写法：zoo: [cat,dog,pig]
+zoo:
+ - cat
+ - dog
+ - pig
+map的写法：maps: {k1: v1,k2: v2}</code></pre><p><strong>@PropertySource</strong>与<strong>@ImportResource</strong></p>
+<p>可以将元数据的配置内容单独的建一个文件，如<code>person.properties</code>文件</p>
+<pre><code class="java">/*
+* @PropertySource,加载指定的配置文件
+*/
+@Component
+@PropertySource(value=&quot;{classpath:person.properties}&quot;)
+public class Person {
+    private String username;
+    private Integer password;</code></pre>
+<pre><code class="java">/*
+*@ImportResource,导入自己写的spring的配置文件
+*&lt;id=&quot;&quot; class=&quot;...&quot;&gt;会被注入
+*/
+@ImportResource(locations = {&quot;classpath:bean.xml&quot;})
+@SpringBootApplication
+public class DemoApplication {
+
+}</code></pre>
+<p>springBoot推荐给容器中添加组件的方式，推荐使用全注解的方式</p>
+<p><strong>@Conﬁguration</strong>注解：指明当前类是一个配置类，可以替代之前的Spring配置文件</p>
+<pre><code class="java">@Configuration
+public class MyConfig {
+    @Bean
+    public User provideUser(){
+        return new User();
+    }
+}</code></pre>
+<p><strong>Profile</strong>是Spring对不同的环境提供不同功能的支持，可以通过激活、指定参数快速的切换环境</p>
+<p>（1）多profile文件形式：application-{profile}.properties/yml</p>
+<p>spring 的配置文件有两种形式 一种是properties 文件 ，一种是 yaml 文件 ，不管哪一种都可以用文件命名的形式区分不同环境的配置 。如：开发环境 ：application-dev.properties，生产环境：application-prod.properties<br>然后在 application.properties 文件中激活，当前的环境 ：spring.profiles.active = dev ,激活开发环境 </p>
+<p>（2）多profile文档块模式： 这个只针对yml文件格式 ，方便写在一个文件中 ，使用<code>---</code>分隔</p>
+<p>（3）命令行激活：–spring.profiles.active=dev</p>
+<p><strong>SpringBoot配置文件的加载位置和优先级</strong>：</p>
+<p>SpringBoot启动会扫描以下位置的application.yml或者 application.properties文件作为SpringBoot的默认配置文件。</p>
+<p>-file:./config/   </p>
+<p>-file:./</p>
+<p>-classpath:/config/</p>
+<p>-classpath:/</p>
+<p>即根目录下的config目录下，然后是 根目录下，然后是classpath路径下的config目录下，最后是classpath路径下。</p>
+<p>优先级由高到低，高优先级的配置会覆盖低优先级的配置。</p>
+<p><strong>自动配置的原理</strong></p>
+<p>Spring Boot的启动类上有一个<code>@SpringBootApplication</code>注解，这个注解是Spring Boot项目必不可少的注解,它是一个复合注解或派生注解，在<code>@SpringBootApplication</code>中有一个注解<code>@EnableAutoConfiguration</code>，这个注解开启了自动配置的功能。</p>
+<p><code>@EnableAutoConfiguration</code>这个注解也是一个派生注解，其中的关键功能由@Import提供，其导入的<code>AutoConfigurationImportSelector</code>的</p>
+<pre><code>List&lt;String&gt; configurations = getCandidateConfigurations(annotationMetadata, attributes);</code></pre><pre><code>List&lt;String&gt; configurations = SpringFactoriesLoader.loadFactoryNames(getSpringFactoriesLoaderFactoryClass(),      getBeanClassLoader());</code></pre><p><code>SpringFactoriesLoader.loadFactoryNames()</code>扫描所有具有META-INF/spring.factories的jar包。 这个<strong>spring.factories</strong>文件也是一组一组的key=value的形式，其中一个key是EnableAutoConfiguration类的全类名，而它的value是一个xxxxAutoConfiguration的类名的列表，这些类名以逗号分隔。</p>
+<pre><code class="properties"># Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration,\
+org.springframework.boot.autoconfigure.aop.AopAutoConfiguration,\
+org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration,\</code></pre>
+<p>每一个这样的xxxAutoConfiguration类都是容器的一个组件，都加入到容器中，用它们来做自动配置。</p>
+<p>自动配置信息有了，那么自动配置还差什么呢？ </p>
+<p> <code>@Conditional</code> 注解。 当这个注解所指定的条件成立，才给容器中添加组件，配置里面的内容才生效。</p>
+<p> 以<strong>HttpEncodingAutoConfiguration（Http编码自动配置）</strong>为例解释自动配置原理 </p>
+<pre><code class="java">//表示这是一个配置类，以前编写的配置文件一样，也可以给容器中添加组件
+@Configuration(proxyBeanMethods=false)
+
+//启动指定类的ConfigurationProperties功能；将配置文件中对应的值和HttpEncodingProperties绑定起来；
+@EnableConfigurationProperties(HttpProperties.class)
+
+    [
+    @ConfigurationProperties(prefix = &quot;spring.http&quot;)
+    public class HttpProperties {
+    ]
+
+//Spring底层@Conditional注解（Spring注解版），根据不同的条件，如果满足指定的条件，
+//整个配置类里面的配置就会生效；判断当前应用是否是web应用，如果是，当前配置类生效
+@ConditionalOnWebApplication(type=ConditionalOnWebApplication.Type.SERVLET)
+
+//判断当前项目有没有这个类CharacterEncodingFilter；SpringMVC中进行乱码解决的过滤器；        
+@ConditionalOnClass(CharacterEncodingFilter.class)
+
+//判断配置文件中是否存在某个配置spring.http.encoding.enabled；如果不存在，判断也是成立的
+//即使我们配置文件中不配置pring.http.encoding.enabled=true，也是默认生效的；
+@ConditionalOnProperty(prefix = &quot;spring.http.encoding&quot;, value = &quot;enabled&quot;, matchIfMissing = true)</code></pre>
+<p>可以通过在yum文件中<code>debug = true</code>属性，来让控制台打印自动配置报告。</p>
+<h3 id="3-日志"><a href="#3-日志" class="headerlink" title="3.日志"></a>3.日志</h3><p>日志门面：SLFJ(Simple Logging Facade for Java)</p>
+<p>日志实现：Log4j、Logback</p>
+<p>可以直接调用日志抽象层里面的方法</p>
+<pre><code class="java">import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+public class HelloWorld {
+  public static void main(String[] args) {
+    Logger logger = LoggerFactory.getLogger(HelloWorld.class);
+    logger.info(&quot;Hello World&quot;);
+  }
+}</code></pre>
+<p>如果想把其它的框架转换成SLF4J,先将系统中其他框架排除出去，用中间包替换原有的日志框架，导入slf4j其他实现。引入其他框架时，只需要把这个框架依赖的日志框架排除掉，SpringBoot能自动适配所有的框架。</p>
+<p>SpringBoot默认配置</p>
+<pre><code class="java">//日志的级别
+//由低到高，可以调整输出的日志级别，默认使用info级别
+logger.trace(&quot;trace日志&quot;);
+logger.debug(&quot;debug日志&quot;);
+logger.info(&quot;info日志&quot;);
+logger.warn(&quot;warn日志&quot;);
+logger.error(&quot;errors&quot;);</code></pre>
+<pre><code class="properties">logging.level.com = trace
+logging.file.path = D:/springboot.log</code></pre>
+<p>指定配置，给类路径下放上每个日志框架自己的配置文件即可；SpringBoot就不使用其他默认配置的了。</p>
+<p>定义自己的日志配置文件</p>
+<table>
+<thead>
+<tr>
+<th align="left">Logging System</th>
+<th align="left">Customization</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Logback</td>
+<td align="left"><code>logback-spring.xml</code>, <code>logback-spring.groovy</code>, <code>logback.xml</code>, or <code>logback.groovy</code></td>
+</tr>
+<tr>
+<td align="left">Log4j2</td>
+<td align="left"><code>log4j2-spring.xml</code> or <code>log4j2.xml</code></td>
+</tr>
+<tr>
+<td align="left">JDK (Java Util Logging)</td>
+<td align="left"><code>logging.properties</code></td>
+</tr>
+</tbody></table>
+<p><code>logback.xml</code>:直接就被日志框架识别了</p>
+<p><code>logback-spring.xml</code>:可以指定在某个环境下生效</p>
+<pre><code class="properties">&lt;springProfile name=&quot;dev&quot;&gt;
+    &lt;!-- configuration to be enabled when the &quot;dev&quot; or &quot;staging&quot; profiles are active --&gt;
+&lt;/springProfile&gt;</code></pre>
+<h2 id="五-Spring-Data"><a href="#五-Spring-Data" class="headerlink" title="五.Spring Data"></a>五.Spring Data</h2><p>Spring Data是Spring的一个子项目，用于简化数据库的访问，支持NoSQL和关系型数据库。其主要的目标是使数据库的访问变得方便快捷。</p>
+<p>JPA Spring Data致力于减少数据库访问层的开发量，开发者唯一要做的只是声明持久层的接口。</p>
+<p>（1）编写实体类和数据表映射</p>
+<pre><code class="java">@Entity//表明是一个实体类，和数据表映射的类
+@Table(name=&quot;book&quot;)//指定和哪个数据表对应；如果省略，默认表名就是book
+public class Book {
+    @Id //标明主键
+    @GeneratedValue(strategy = GenerationType.AUTO) //自增主键
+    private Integer id;
+
+    @Column(name = &quot;last_Name&quot;,length = 20)//和数据表对应的列，省略默认name为表名
+    private String name;</code></pre>
+<p>（2）编写Dao接口来操作实体类对应的数据表</p>
+<pre><code class="java">public interface BookRepository extends JpaRepository&lt;Book,Integer&gt;{
+
+}</code></pre>
+<p>（3) 编写Controller层</p>
+<pre><code class="java">public class BookController {
+    @Autowired
+    BookRepository bookRepository;
+
+    @GetMapping(&quot;/book&quot;)
+    public List&lt;Book&gt; getBooks(){
+        List&lt;Book&gt; all = bookRepository.findAll();
+        return all;
+    }</code></pre>
+<p>(4)application中的配置</p>
+<pre><code class="properties">spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC  
+  jpa:
+    hibernate:
+      ddl-auto: update #更新或者创建数据表结构</code></pre>
+<p><code>Repository&lt;T,ID&gt;</code>，Repository是一个空接口，即是一个标记接口，若我们定义的接口继承了Repository,则该接口会被IOC容器识别为一个Repository Bean。</p>
+<pre><code class="java">//还可以通过注解实现
+@RepositoryDefinition(domainClass = Book.class,idClass = Integer.class)
+public interface BookRepository {
+
+}
+</code></pre>
+<p>Repository查询方法定义规范：</p>
+<p>按照Spring Data规范，查询方法以<code>find</code>,<code>read</code>,<code>get</code>开头。涉及条件查询时，条件的属性用条件关键字连接。</p>
+<pre><code class="java">//WHERE lastName LIKE ?% AND id &lt; ?
+List&lt;Person&gt; getByLastNameStartingWithAndIdLessThan(String lastName, Integer id)
+</code></pre>
+<p>上面的这个不好使，我们来使用<code>@Query</code>注解灵活查询。</p>
+<pre><code class="java">//传递参数的方式：使用占位符、命名参数
+@Query(&quot;SELECT b FROM Book b WHERE b.id&gt;?1 And b.name Like ?2%&quot;)
+List&lt;Book&gt; getBookByIdAndName(Integer id,String name);
+
+@Query(&quot;update Book b set b.author=:author where b.id=:id&quot;)
+void updateBook(@Param(&quot;id&quot;) Integer id,@Param(&quot;author&quot;) String author);
+
+//nativeQuery = true使用原生的SQL查询
+@Query(value=&quot;select count(id) from book&quot;,nativeQuery = true)
+long getTotalcount();
+</code></pre>
+<p>可以通过自定义JPOL完成UPDATE和DELETE操作，JPQL不支持INSERT</p>
+<pre><code class="java">//使用时在Controller方法上要加一个@Transactional注解
+@Modifying
+@Query(&quot;update Book b set b.author=:author where b.id=:id&quot;)
+void updateBook(@Param(&quot;id&quot;) Integer id,@Param(&quot;author&quot;) String author);
+</code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://12581a.github.io" rel="external nofollow noreferrer">Zero</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://12581a.github.io/posts/359.html">https://12581a.github.io/posts/359.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://12581a.github.io" target="_blank">Zero</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Spring/">
+                                    <span class="chip bg-color">Spring</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/posts/43de.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="JVM">
+                        
+                        <span class="card-title">JVM</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            JVM概述1.运行时数据区域Java 虚拟机在执行 Java 程序的过程中会把他所管理的内存划分为若干个不同的数据区域。Java 虚拟机规范将 JVM 所管理的内存分为以下几个运行时数据区：程序计数器、Java 虚拟机栈、本地方法栈、Jav
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-04
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zero
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/6a89.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Redis">
+                        
+                        <span class="card-title">Redis</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Redis知识点总结一.noSql概述Not Only SQL,意为“不仅仅是SQL”
+分库分表+水平拆分+MySQL集群
+1.在Memcached的高速缓存，MySQL的主从复制，读写分离的基础上，这时MySQL主库的写压力出现瓶颈，而数
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-01-17
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zero
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Redis/">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://12581a.github.io" target="_blank">Zero</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/12581a" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:mailto:2765221869@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2765221869" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2765221869" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
