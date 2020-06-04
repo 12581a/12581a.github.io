@@ -494,7 +494,7 @@
 </tr>
 </tbody></table>
 <p><strong>4.Mysql逻辑架构</strong></p>
-<p><img src="/2020/06/04/MySql/MySql%5CMySql%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84.png" alt></p>
+<p><img src="/posts/3ee1.htm/MySql%5CMySql%E9%80%BB%E8%BE%91%E6%9E%B6%E6%9E%84.png" alt></p>
 <p>MySQL逻辑架构整体分为三层，最上层为客户端层，并非MySQL所独有，诸如：连接处理、授权认证、安全等功能均在这一层处理。</p>
 <p>MySQL大多数核心服务均在中间这一层，包括查询解析、分析、优化、缓存、内置函数(比如：时间、数学、加密等函数)。所有的跨存储引擎的功能也在这一层实现：存储过程、触发器、视图等。</p>
 <p>最下层为存储引擎，其负责MySQL中的数据存储和提取。和Linux下的文件系统类似，每种存储引擎都有其优势和劣势。中间的服务层通过API与存储引擎通信，这些API接口屏蔽了不同存储引擎间的差异。</p>
@@ -503,7 +503,7 @@
 <p><strong>5.MySQL查询过程</strong></p>
 <p>用户总是希望MySQL能够获得更高的查询性能，最好的办法是弄清楚MySQL是如何优化和执行查询的。一旦理解了这一点，就会发现：很多的查询优化工作实际上就是遵循一些原则让MySQL的优化器能够按照预想的合理方式运行而已。</p>
 <p>当向MySQL发送一个请求的时候，MySQL到底做了些什么呢？下图展示了MySQL的查询过程。</p>
-<p><img src="/2020/06/04/MySql/MySql%5CMySql%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B.png" alt></p>
+<p><img src="/posts/3ee1.htm/MySql%5CMySql%E6%9F%A5%E8%AF%A2%E8%BF%87%E7%A8%8B.png" alt></p>
 
             </div>
             <hr/>

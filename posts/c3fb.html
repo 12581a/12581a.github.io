@@ -793,7 +793,7 @@ void sort(List list, Comparator c)//定制排序，由Comparator控制排序逻�
 void swap(List list, int i , int j)//交换两个索引位置的元素
 void rotate(List list, int distance)//旋转。当distance为正数时，将list后distance个元素整体移到前面。当distance为负数时，将 list的前distance个元素整体移到后面。
 </code></pre>
-<h4 id="10-集合"><a href="#10-集合" class="headerlink" title="10.集合"></a>10.集合</h4><p><img src="/2019/12/29/java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%9B%9E%E9%A1%BE/%E9%9B%86%E5%90%88.PNG" alt></p>
+<h4 id="10-集合"><a href="#10-集合" class="headerlink" title="10.集合"></a>10.集合</h4><p><img src="/posts/c3fb.htm/%E9%9B%86%E5%90%88.PNG" alt></p>
 <h5 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h5><p> <code>ArrayList</code>在内部使用了数组来存储所有元素。例如，一个ArrayList拥有5个元素，实际数组大小为<code>6</code>（即有一个空位，当添加一个元素并指定索引到<code>ArrayList</code>时，<code>ArrayList</code>自动移动需要移动的元素， 然后，往内部指定索引的数组位置添加一个元素，然后把<code>size</code>加<code>1</code>， 继续添加元素，但是数组已满，没有空闲位置的时候，<code>ArrayList</code>先创建一个更大的新数组，然后把旧数组的所有元素复制到新数组，紧接着用新数组取代旧数组，现在，新数组就有了空位，可以继续添加一个元素到数组末尾，同时<code>size</code>加<code>1</code>。</p>
 <p><code>List</code>接口，可以看到几个主要的接口方法：</p>
 <ul>
