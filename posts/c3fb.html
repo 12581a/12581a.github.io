@@ -691,10 +691,9 @@
 <p>（8）分割字符串</p>
 <p><code>String s = &quot;A,B,C,D&quot;;</code><br><code>String[] ss = s.split(&quot;\\,&quot;); // {&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;}</code></p>
 <ul>
-<li><p><strong>字符串与基本数据类型的转化</strong></p>
-<p>要把任意基本类型或引用类型转换为字符串，可以使用静态方法<code>valueOf()</code>。这是一个重载方法，编译器会根据参数自动选择合适的方法。</p>
-</li>
+<li><strong>字符串与基本数据类型的转化</strong></li>
 </ul>
+<p>要把任意基本类型或引用类型转换为字符串，可以使用静态方法<code>valueOf()</code>。这是一个重载方法，编译器会根据参数自动选择合适的方法。</p>
 <p><code>String s = String.valueOf(123456.78);</code></p>
 <p> 要把字符串转换为其他类型，就需要根据情况。例如，把字符串转换为<code>int</code>类型：</p>
 <p> <code>int n1 = Integer.parseInt(&quot;123&quot;); // 123</code></p>
@@ -1006,100 +1005,7 @@ Class c1 = Person.class;
 Class c2 = new Person().getClass();
 Class c3 = Class.forName(&quot;cn.text.text01.Person&quot;);</code></pre>
 <p>可以不通过new，得到实例 <code>Person p = (Person)c3.newInstance();</code> </p>
-<h4 id="13-并发"><a href="#13-并发" class="headerlink" title="13.并发"></a>13.并发</h4><h5 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h5><ul>
-<li>进程是代码在数据集合上的一次运行活动， 是系统进行资源分配和调度的基本单位，进程是动态的。系统运行一个程序即是一个进程从创建，运行到消亡的过程。在 Java 中，当我们启动 main 函数时其实就是启动了一个 JVM 的进程，而 main 函数所在的线程就是这个进程中的一个线程，也称主线程。</li>
-<li>线程则是进程的一个执行路径， 一个进程中至少有一个线程，进程中 的多个线程共享进程的资源。</li>
-</ul>
-<p>程序计数器</p>
-<h5 id="java中的线程"><a href="#java中的线程" class="headerlink" title="java中的线程"></a>java中的线程</h5><p><strong>1.线程的状态与生命周期</strong></p>
-<ul>
-<li><p>新建：当一个<code>Thread</code>类或其子类的对象被声明并创建时，新生的线程对象处于新建状态。此时它已经有了相应的内存空间和其他资源</p>
-</li>
-<li><p>运行：线程创建之后仅仅是占有了内存资源，在JVM管理的线程中还没有这个线程，此线程调用<code>start()</code>方法通知JVM，这样JVM就会知道又有一个新线程排队等候切换了。</p>
-</li>
-<li><p>中断：有4种原因的中断。<strong>a.</strong>线程使用CPU资源期间，执行了<code>sleep(int millsecond)</code>方法，是当前线程处于休眠状态。<strong>b.</strong>执行了<code>wait()</code>方法，使当前线程进入等待状态。<strong>c.</strong>线程执行某个操作进入阻塞状态<strong>d.</strong>JVM将CPU的资源从当前线程切换给其他线程，使本线程让出CPU的使用权处于中断状态。</p>
-</li>
-<li><p>死亡</p>
-</li>
-</ul>
-<p><strong>2.线程的创建与运行</strong></p>
-<p>Java 中有三种线程创建方式，分别为实现 Runnable 接口的 run 方法，继承 Thread 类 并重写 run 的方法，使用 Fu阳reTask 方式。</p>
-<pre><code class="java">public class ThreadTest extends Thread{
-    public void run() {
-        System.out.println(&quot;Hello啊&quot;);
-    }
-    public static void main(String[] args) {
-        ThreadTest t = new ThreadTest();
-        t.start();
-    }
-}</code></pre>
-<pre><code class="java">public class ThreadRunnable implements Runnable{
-    @Override
-    public void run() {
-        System.out.println(&quot;I am a thread&quot;);
-    }
-
-    public static void main(String[] args) {
-        ThreadRunnable t = new ThreadRunnable();
-        new Thread(t).start();
-    }
-}</code></pre>
-<pre><code class="java">public class ThreadCaller implements Callable&lt;String&gt;{
-    @Override
-    public String call() throws Exception {
-        return &quot;Hello&quot;;
-    }
-
-    public static void main(String[] args) {
-        //创建异步任务
-        FutureTask&lt;String&gt; futureTask = new FutureTask&lt;&gt;(new ThreadCaller());
-        //启动线程
-        new Thread(futureTask).start();
-        try{
-            //等待任务执行完毕，并返回结果
-            String result = futureTask.get();
-            System.out.println(result);
-        }catch(InterruptedException | ExecutionException e){
-            e.printStackTrace();
-        }
-    }
-}</code></pre>
-<p>小结 ： 使用继承方式的好处是方便传参，你可以在子类里面添加成员变量，通过 set 方法设置参数或者通过构造函数进行传递，而如果使用 Runnable 方式，则只能使用主线 程里面被声明为 final 的变量。不好的地方是 Java 不支持多继承，如果继承了 Thread 类， 那么子类不能再继承其他类，而 Runable 则没有这个限制。前两种方式都没办法拿到任务 的返回结果，但是 Futuretask 方式可以。</p>
-<h5 id="理解线程上下文切换"><a href="#理解线程上下文切换" class="headerlink" title="理解线程上下文切换"></a>理解线程上下文切换</h5><blockquote>
-<p>多线程编程中一般线程的个数都大于 CPU 核心的个数，而一个 CPU 核心在任意时刻只能被一个线程使用，为了让这些线程都能得到有效执行，CPU 采取的策略是为每个线程分配时间片并轮转的形式。当一个线程的时间片用完的时候就会重新处于就绪状态让给其他线程使用，这个过程就属于一次上下文切换。</p>
-<p>概括来说就是：当前任务在执行完 CPU 时间片切换到另一个任务之前会先保存自己的状态，以便下次再切换回这个任务时，可以再加载这个任务的状态。<strong>任务从保存到再加载的过程就是一次上下文切换</strong>。</p>
-<p>上下文切换通常是计算密集型的。也就是说，它需要相当可观的处理器时间，在每秒几十上百次的切换中，每次切换都需要纳秒量级的时间。所以，上下文切换对系统来说意味着消耗大量的 CPU 时间，事实上，可能是操作系统中时间消耗最大的操作。</p>
-<p>Linux 相比与其他操作系统（包括其他类 Unix 系统）有很多的优点，其中有一项就是，其上下文切换和模式切换的时间消耗非常少。</p>
-</blockquote>
-<h5 id="线程死锁"><a href="#线程死锁" class="headerlink" title="线程死锁"></a>线程死锁</h5><ul>
-<li><p><strong>什么是线程死锁</strong></p>
-<p>死锁是指两个或两个以上的线程在执行过程中，因争夺资源而造成的互相等待的现象， 在无外力作用的情况下，这些线程会一直相互等待而无法继续运行下去</p>
-</li>
-</ul>
-<blockquote>
-<p>死锁的产生必须具备以 下四个条件。<br>· 互斥条件： 指线程对己经获取到的资源进行排它性使用 ， 即该资源同时只由一个线 程占用。如果此时还有其他线程请求获取该资源，则请求者只能等待，直至占有资 源的线程释放该资源。</p>
-<p> · 请求并持有条件 ： 指一个线程己经持有了至少一个资源， 但又提出了新的资源请求， 而新资源己被其他线程占有，所以当前线程会被阻塞，但阻塞的同时并不释放自己经获取的资源。</p>
-<p> · 不可剥夺条件 ： 指线程获取到的资源在自己使用完之前不能被其他线程抢占， 只有 在自己使用完毕后才由 自 己释放该资源。</p>
-<p> · 环路等待条件 ： 指在发生死锁时， 必然存在一个线程→资源的环形链， 即线程集合 {TO , TL T2，…， Tn｝中 的 TO 正在等待一个 Tl 占用 的资源， Tl 正在等待 T2 占 用的资源，……Tn 正在等待己被 TO 占用的资源。</p>
-</blockquote>
-<ul>
-<li>如何避免死锁？</li>
-</ul>
-<p><strong>破坏互斥条件</strong></p>
-<p>这个条件我们没有办法破坏，因为我们用锁本来就是想让他们互斥的（临界资源需要互斥访问）。</p>
-<p><strong>破坏请求与保持条件</strong></p>
-<p>一次性申请所有的资源。</p>
-<p><strong>破坏不剥夺条件</strong></p>
-<p>占用部分资源的线程进一步申请其他资源时，如果申请不到，可以主动释放它占有的资源。</p>
-<p><strong>破坏循环等待条件</strong></p>
-<p>靠按序申请资源来预防。按某一顺序申请资源，释放资源则反序释放。破坏循环等待条件。</p>
-<h5 id="ThreadLocal"><a href="#ThreadLocal" class="headerlink" title="ThreadLocal"></a>ThreadLocal</h5><blockquote>
-<p>ThreadLocal 是 JDK 包提供的，它提供了线程本地变量，也就是如果你创建了 一个 ThreadLocal 变量，那么访问这个变量的每个线程都会有这个变量的一个本地副本。 当多 个线程操作这个变量时，实际操作的是自己本地内存里面的变量，从而避免了线程安全问 题。创建一个 ThreadLocal 变量后，每个线程都会复制一个变量到自己的本地内存</p>
-</blockquote>
-<h5 id="synchronized-关键字"><a href="#synchronized-关键字" class="headerlink" title="synchronized 关键字"></a>synchronized 关键字</h5><blockquote>
-<p>synchronized 块是 Java 提供的一种原子性内置锁， Java 中的每个对象都可以把它当作 一个同步锁来使用 ， 这些 Java 内置的使用者看不到的锁被称为内部锁，也叫作监视器锁。 线程的执行代码在进入 synchronized 代码块前会自动获取内部锁，这时候其他线程访问该 同步代码块时会被阻塞挂起。拿到内部锁的线程会在正常退出同步代码块或者抛出异常后 或者在同步块内调用了该内置锁资源的 wait 系列方法时释放该内置锁。 内置锁是排它锁， 也就是当一个线程获取这个锁后， 其他线程必须等待该线程释放锁后才能获取该锁。</p>
-</blockquote>
-<h4 id="14-Java8新特性"><a href="#14-Java8新特性" class="headerlink" title="14.Java8新特性"></a>14.Java8新特性</h4><h5 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h5><p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）。 </p>
+<h4 id="13-Java8新特性"><a href="#13-Java8新特性" class="headerlink" title="13.Java8新特性"></a>13.Java8新特性</h4><h5 id="Lambda-表达式"><a href="#Lambda-表达式" class="headerlink" title="Lambda 表达式"></a>Lambda 表达式</h5><p>Lambda 允许把函数作为一个方法的参数（函数作为参数传递到方法中）。 </p>
 <p>排列字符串</p>
 <pre><code class="java">List&lt;String&gt; list = Arrays.asList(&quot;Tom&quot;,&quot;City&quot;,&quot;Jone&quot;,&quot;Alice&quot;,&quot;Robby&quot;);
 Collections.sort(list, new Comparator&lt;String&gt;() {
